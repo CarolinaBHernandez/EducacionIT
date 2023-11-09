@@ -1,0 +1,17 @@
+{% extends "appuni/layout.html" %}
+
+{% block content %}
+  <h2>Detalles del Alumno</h2>
+
+  <div class="form-styles">
+    <p>ID: {{ alumno.id }}</p>
+    <p>Nombre y Apellido: {{ alumno.nombre }}</p>
+    <p>Edad: {{ alumno.edad }}</p>
+    <p>Materia: {{ alumno.materia }}</p>
+  </div>
+
+  <a href="{% url 'index' %}" class="estilo-boton">Volver</a>
+  <a href="{% url 'actualizar_alumno' alumno.id %}" class="estilo-boton">Actualizar</a>
+  <a href="{% url 'eliminar_alumno' alumno.id %}" class="estilo-boton">Eliminar</a>
+{% endblock %}
+

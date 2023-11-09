@@ -1,0 +1,16 @@
+{% extends "appuni/layout.html" %}
+
+{% block content %}
+  <h2>Ingresar Nuevo Alumno</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-styles">
+      {{ form.as_p }}
+    </div>
+
+    <input type="submit" class="estilo-boton" value="Añadir Alumno"/>
+  </form>
+
+  <a href="{% url 'index' %}" class="estilo-boton">Volver</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "appuni/layout.html" %}
+{% load static %}
+
+{% block content %}
+  <table class="column-container">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre y Apellido</th>
+        <th>Edad</th>
+        <th>Materia</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for alumno in alumnos %}
+        <tr>
+          <td><a href="{% url 'alumno' alumno.id %}">{{ alumno.id }}</a></td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.edad }}</td>
+          <td>{{ alumno.materia }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="{% url 'nuevo_alumno' %}" class="estilo-boton">Nuevo Alumno</a>
+{% endblock %}
